@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barwar City Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-6 shadow">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between">
+      <h1 class="text-2xl font-bold">Barwar City Portal</h1>
+      <p class="text-sm mt-2 md:mt-0">Apne shehar ki har zarurat, ek hi jagah</p>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="max-w-6xl mx-auto px-4 py-10 text-center">
+    <h2 class="text-3xl font-bold mb-3">Welcome to Barwar</h2>
+    <p class="text-gray-600">Complaints, services aur city information – sab kuch yahan milega.</p>
+  </section>
+
+  <!-- Complaint Form -->
+  <section class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow mb-12">
+    <h3 class="text-xl font-semibold mb-4">📋 Register a Complaint</h3>
+    <form class="space-y-4" onsubmit="handleComplaint(event)">
+      <input required type="text" placeholder="Aapka Naam" class="w-full p-3 border rounded-xl" />
+      <input required type="tel" placeholder="Mobile Number" class="w-full p-3 border rounded-xl" />
+      <select required class="w-full p-3 border rounded-xl">
+        <option value="">Complaint Type Select Karein</option>
+        <option>Cleaning</option>
+        <option>Electricity</option>
+        <option>Road</option>
+        <option>Hospital</option>
+      </select>
+      <textarea required placeholder="Complaint detail likhein" class="w-full p-3 border rounded-xl"></textarea>
+      <input type="file" class="w-full" />
+      <button class="w-full bg-blue-600 text-white py-3 rounded-xl">Submit Complaint</button>
+      <p id="complaintMsg" class="text-green-600 font-medium hidden">Complaint submit ho chuki hai.</p>
+    </form>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <h3 class="text-xl font-semibold mb-6">City Services</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🧹 Cleaning Complaint</h4><p class="text-sm text-gray-600 mt-2">Safai se judi shikayat</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">⚡ Electricity Complaint</h4><p class="text-sm text-gray-600 mt-2">Bijli se judi problem</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🛣️ Road Complaint</h4><p class="text-sm text-gray-600 mt-2">Sadak aur traffic</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🏥 Hospital Service</h4><p class="text-sm text-gray-600 mt-2">Health services</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🛒 Market</h4><p class="text-sm text-gray-600 mt-2">Local bazaar</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🗺️ Roads</h4><p class="text-sm text-gray-600 mt-2">Main routes</p></div>
+      <div class="bg-white p-5 rounded-2xl shadow"><h4 class="font-semibold">🕌 Temples & Mosques</h4><p class="text-sm text-gray-600 mt-2">Dharmik sthal</p></div>
+    </div>
+  </section>
+
+  <!-- Chairman Rating -->
+  <section class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow mb-16">
+    <h3 class="text-xl font-semibold mb-4">⭐ Chairman Rating & Feedback</h3>
+    <form class="space-y-4" onsubmit="handleRating(event)">
+      <input required type="text" placeholder="Aapka Naam" class="w-full p-3 border rounded-xl" />
+      <select required class="w-full p-3 border rounded-xl">
+        <option value="">Rating Select Karein</option>
+        <option>⭐</option>
+        <option>⭐⭐</option>
+        <option>⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐⭐</option>
+      </select>
+      <textarea placeholder="Aapka feedback" class="w-full p-3 border rounded-xl"></textarea>
+      <button class="w-full bg-yellow-500 text-white py-3 rounded-xl">Submit Rating</button>
+      <p id="ratingMsg" class="text-green-600 font-medium hidden">Thank you for your feedback.</p>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+      <p class="text-sm">© 2026 Barwar City Portal. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+function handleComplaint(e){
+  e.preventDefault();
+  document.getElementById('complaintMsg').classList.remove('hidden');
+  e.target.reset();
+}
+function handleRating(e){
+  e.preventDefault();
+  document.getElementById('ratingMsg').classList.remove('hidden');
+  e.target.reset();
+}
+</script>
+
+</body>
+</html>
 
